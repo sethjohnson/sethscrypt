@@ -1,0 +1,13 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= javascript_include_tag :defaults %>
+
+<li>
+  <%= card.name %>
+  |
+ <%= link_to "delete", card, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{card.name}" %>
+</li>

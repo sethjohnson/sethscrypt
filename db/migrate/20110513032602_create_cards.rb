@@ -3,6 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.integer :suit_id
       t.integer :value_id
+      t.indeger :deck_id
 
       t.timestamps
     end

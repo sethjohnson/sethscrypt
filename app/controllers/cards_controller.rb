@@ -7,10 +7,24 @@ class CardsController < ApplicationController
    def create
     @card = Card.new(params[:card])
    
-    @card.save
-      flash[:success] = "You just created a " + CardValue.find(@card.value_id).name + " of " + Suit.find(@card.suit_id).name  + "s"
-      redirect_to '/'
-
+   if  @card.save
+      flash[:success] = "You just created a " + @card.value + " of " + @card.suit  + "s"
+      @card = Card.new
+      render 'new'
+   end
      
+  end
+
+   def index
+     @title = "All Cards"
+     @cards = Card.all
+   end
+
+
+  def destroy
+      Card.find(params[:id]).destroy
+      flash[:success] = "Card torn up."
+      redirect_to cards_path
+
   end
 end

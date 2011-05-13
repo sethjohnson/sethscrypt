@@ -3,7 +3,25 @@ class Card < ActiveRecord::Base
 
   belongs_to :deck
 
-  def suit
+  def value
+    if (value_id.nil?)
+      return "Joe Schmoe"
+    else
+       return CardValue.find(value_id).name
+    end
+
     
+  end
+
+  def suit
+    if (suit_id.nil?)
+      return "Suitlessness"
+    else
+      return Suit.find(suit_id).name
+    end
+  end
+
+  def name
+    return value + " of " + suit + "s"
   end
 end

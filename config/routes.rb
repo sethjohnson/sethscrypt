@@ -1,14 +1,16 @@
 Sethscrypt::Application.routes.draw do
 
-  get "pages/home"
-  get "pages/about"
-  get "pages/tools"
+    resources :pages
+    resources :cards
+
 
   root :to => 'pages#home'
 
   match '/home', :to => 'pages#home'
   match '/about', :to => 'pages#about'
   match '/tools', :to => 'pages#tools'
+
+  match '/newcard', :to => 'cards#new'
 
 
   # The priority is based upon order of creation:

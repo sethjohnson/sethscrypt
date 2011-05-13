@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  suit_id: 1
+  value_id: 1
+
+two:
+  suit_id: 1
+  value_id: 1

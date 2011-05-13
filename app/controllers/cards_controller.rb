@@ -7,7 +7,7 @@ class CardsController < ApplicationController
    def create
     @card = Card.new(params[:card])
    
-
+    @card.save
       flash[:success] = "You just created a " + CardValue.find(@card.value_id).name + " of " + Suit.find(@card.suit_id).name  + "s"
       redirect_to '/'
 

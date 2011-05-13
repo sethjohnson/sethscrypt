@@ -4,7 +4,7 @@ class Card < ActiveRecord::Base
   belongs_to :deck
 
   def value
-    if (value_id.nil?)
+    if (value_id.nil? || value_id == 0)
       return "Joe Schmoe"
     else
        return CardValue.find(value_id).name
@@ -14,8 +14,8 @@ class Card < ActiveRecord::Base
   end
 
   def suit
-    if (suit_id.nil?)
-      return "Suitlessness"
+    if (suit_id.nil? || suit_id == 0)
+      return "Suitlessnes"
     else
       return Suit.find(suit_id).name
     end

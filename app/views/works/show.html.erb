@@ -1,0 +1,13 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= @work.title %>
+      </h1>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @work.title %><br />
+      <strong>URL</strong> <%= link_to work_path(@work), @work %><br />
+    </td>
+  </tr>
+</table>

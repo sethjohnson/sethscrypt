@@ -2,6 +2,7 @@ Sethscrypt::Application.routes.draw do
 
     resources :pages
     resources :cards
+    resources :works
 
 
   root :to => 'pages#home'

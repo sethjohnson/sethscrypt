@@ -1,12 +1,17 @@
 class Work < ActiveRecord::Base
   attr_accessible :title
   attr_accessor :author
+  
  validates :title,  :presence   => true,
                     :length     => { :maximum => 50 }
 
   has_many :author_relationships
 
   has_many :authors, :through => :author_relationships
+
+  accepts_nested_attributes_for :authors, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
+
+
 
 
    def written_by?(author)
@@ -19,7 +24,10 @@ class Work < ActiveRecord::Base
 
    def author_string
      output = ""
-     if (authors.length == 1)
+   if (authors.nil? || authors.length == 0)
+           output = "anonymous";
+
+   elsif (authors.length == 1)
 
       output = authors[0].name
 
@@ -33,9 +41,6 @@ class Work < ActiveRecord::Base
        output += "and "
        output += authors.last.name
 
-     else
-
-      output = "anonymous";
     end
 
      return output;

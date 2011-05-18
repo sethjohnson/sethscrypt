@@ -6,9 +6,9 @@
 
 <div class="field">
  <%= f.fields_for :authors do |a| %>
-   <%=a.label :author, "Author!" %><br />
-  <%= a.text_field :author, :rows => 2 %>
-
+  <%= render 'author_fields', :f => a %>
  <%end%>
+ <%= link_to_add_fields "Add Author", f, :authors %>
+
 </div>
 

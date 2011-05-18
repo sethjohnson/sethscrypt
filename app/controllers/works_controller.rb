@@ -2,6 +2,9 @@ class WorksController < ApplicationController
   def new
     @work = Work.new
     @title = "Create a new work"
+    3.times do
+      author =@work.authors.build
+    end
   end
 
   def index
@@ -16,7 +19,11 @@ class WorksController < ApplicationController
 
   def create
     @work = Work.new(params[:work])
+    @author = Author.new(params[:work][:authors_attributes])
+    @author.save()
+    
     if @work.save
+      @work.written_by!(@author)
       flash[:success] = "Success!"
       redirect_to @work
     else

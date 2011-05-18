@@ -7,6 +7,7 @@
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @work.title %><br />
+      <strong>Author</strong> <%= @work.author_string %><br />
       <strong>URL</strong> <%= link_to work_path(@work), @work %><br />
     </td>
   </tr>

@@ -5,8 +5,10 @@
 </div>
 
 <div class="field">
-  <%= f.label :author %><br />
-  <%= f.text_field :author %>
+ <%= f.fields_for :authors do |a| %>
+   <%=a.label :author, "Author!" %><br />
+  <%= a.text_field :author, :rows => 2 %>
 
+ <%end%>
 </div>
 

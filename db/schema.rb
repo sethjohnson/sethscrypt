@@ -10,7 +10,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110513154558) do
+ActiveRecord::Schema.define(:version => 20110518170027) do
+
+  create_table "author_relationships", :force => true do |t|
+    t.integer  "work_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "author_relationships", ["author_id", "work_id"], :name => "index_author_relationships_on_author_id_and_work_id", :unique => true
+  add_index "author_relationships", ["author_id"], :name => "index_author_relationships_on_author_id"
+  add_index "author_relationships", ["work_id"], :name => "index_author_relationships_on_work_id"
+
+  create_table "authors", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "card_values", :force => true do |t|
     t.string   "name"
@@ -27,6 +52,12 @@ ActiveRecord::Schema.define(:version => 20110513154558) do
     t.integer  "deck_id"
   end
 
+  create_table "compositions", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "decks", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -35,6 +66,12 @@ ActiveRecord::Schema.define(:version => 20110513154558) do
 
   create_table "suits", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "works", :force => true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -31,11 +31,7 @@ module ApplicationHelper
 
 
     link_to_function("Gimme more fields darnit!!!", nil, :id =>"MYLINKID")
-    javascript_tag "
-$(document).ready(function() {
-        $('#MYLINKID').click(function(){
-            $.get('link to that fields file',
-                function(data){
+    javascript_tag "$(document).ready(function() { $('#MYLINKID').click(function(){$.get('link to that fields file', function(data){
                     add_fields(this, 'authors', data);
                 },
             'html');

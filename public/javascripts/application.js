@@ -13,6 +13,21 @@ function add_fields(link, association, content) {
 
 function f()
 {
-    var i = document.getElementById("box").value;
+    var i = document.getElementById("box").value.toUpperCase();
     document.getElementById("count").innerHTML=i;
 }
+
+function s()
+{
+    document.getElementById("box").select()
+}
+
+function q(){
+    $(document).ready(function(){
+$(".flip").click(function(){
+    $(".panel").slideToggle("slow");
+  });
+});
+}
+
+

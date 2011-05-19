@@ -13,6 +13,8 @@ Sethscrypt::Application.routes.draw do
 
   match '/newcard', :to => 'cards#new'
 
+  match '/playground', :to => 'pages#playground'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

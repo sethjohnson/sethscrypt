@@ -11,4 +11,8 @@ class PagesController < ApplicationController
     @title = "Tools"
   end
 
+  def playground
+    @title = "Play Ground"
+  end
+
 end

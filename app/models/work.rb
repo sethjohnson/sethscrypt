@@ -14,6 +14,7 @@ class Work < ActiveRecord::Base
 
 
 
+
    def written_by?(author)
     author_relationships.find_by_author_id(author)
   end

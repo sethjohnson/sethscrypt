@@ -15,4 +15,9 @@ class PagesController < ApplicationController
     @title = "Play Ground"
   end
 
+  def ajax
+    @text = params[:q]
+    @items = Food.find(:all, :conditions => ["name LIKE ?", "#{@text}%"])
+  end
+
 end

@@ -1,0 +1,13 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<% if (@text != "" && @items.count != 0) %>
+<ul>
+<% @items.each do |i|  %>
+  <li>
+<%= i.name %>
+  </li>
+<% end %>
+</ul>
+<%end%>

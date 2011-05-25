@@ -17,7 +17,7 @@ class PagesController < ApplicationController
 
   def ajax
     @text = params[:q]
-    @items = Food.find(:all, :conditions => ["name LIKE ?", "#{@text}%"])
+    @items = Food.find(:all, :conditions => ["UPPER(name) LIKE ?", "#{@text.upcase}%"])
     render :layout => false
   end
 

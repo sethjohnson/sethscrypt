@@ -1,20 +1,36 @@
 <script type="text/javascript">
-  q()
-  x()
+  //q()
+ // x( )
 </script>
 
 
 
 <script type="text/javascript">
 
+$(document).ready(function(){
 
-$("#myDiv").hide();
+  $("input").keyup( function()
+{
+    //loadXMLDoc(this.value);
+    $.post("ajax_xml", "q="+this.value,
+  function(data){ $("#takeout").html(showXMLContents(data, "FOOD"));}, "xml");
+});
+
+
+});
+
+  
 </script>
 
-
+<%= @food.name %>
 
 <h3>Search for some food:</h3>
 <input type="text" id="box"></input>
 <div id="food"></div>
+<div id="takeout">BAR</div>
+
+
+
+
 
 

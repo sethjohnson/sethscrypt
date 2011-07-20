@@ -1,7 +1,10 @@
 module PagesHelper
+  def foodmart
+    return "http://localhost:3000";
+  end
 
-  def quote (str)
-  str.gsub('\\','\\\\').gsub('\'','\\\'')
-end
-
+  def get(
+    )
+    
+  end
 end

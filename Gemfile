@@ -7,6 +7,9 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 
+gem 'omniauth', '0.2.0'
+gem 'httparty'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

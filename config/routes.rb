@@ -1,8 +1,10 @@
 Sethscrypt::Application.routes.draw do
 
+
     resources :pages
     resources :cards
     resources :works
+    resources :users
 
 
   root :to => 'pages#home'
@@ -17,6 +19,7 @@ Sethscrypt::Application.routes.draw do
   match '/ajax', :to => 'pages#ajax'
   match '/ajax_xml', :to => 'pages#ajax_xml'
 
+  match '/signup', :to => 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

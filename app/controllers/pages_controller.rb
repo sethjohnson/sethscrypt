@@ -15,9 +15,7 @@ class PagesController < ApplicationController
 
   def playground
     @title = "Play Ground"
-    @text = Net::HTTP.get_response(URI.parse("http://localhost:3000/takeout")).body
-    @data = ActiveSupport::JSON.decode(@text)
-    @food = Food.new(@data.first["food"]);
+   
   end
 
   def ajax
